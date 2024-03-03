@@ -20,7 +20,7 @@ public class CurrencyService {
         if (fromCurrency.equals(toCurrency)) {
             return value;
         } else {
-            throw new CurrencyExchangeException(null, "Currency conversion not supported yet.");
+            throw new CurrencyExchangeException(null, "Conversion is not supported.");
 
         }
     }

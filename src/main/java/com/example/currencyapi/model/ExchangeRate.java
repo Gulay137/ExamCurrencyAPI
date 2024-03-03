@@ -1,5 +1,3 @@
-
-
 package com.example.currencyapi.model;
 
 import lombok.AllArgsConstructor;
@@ -22,12 +20,12 @@ public class ExchangeRate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "from_currency_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "from_currency_id", referencedColumnName = "id", nullable = false)
     private Currency fromCurrency;
 
-    @ManyToOne
-    @JoinColumn(name = "to_currency_id", referencedColumnName = "id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "to_currency_id", referencedColumnName = "id", nullable = false)
     private Currency toCurrency;
 
     @Column(nullable = false)

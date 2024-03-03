@@ -24,5 +24,6 @@ public class Currency {
     private String code;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     private CurrencyType currencyType;
 }
